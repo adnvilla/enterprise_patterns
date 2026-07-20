@@ -1,0 +1,11 @@
+<!-- layout.tmpl: paso 2, la apariencia común a TODAS las páginas -->
+{{define "layout"}}
+<html>
+<head><title>{{.Title}} — Mi tienda</title></head>
+<body>
+  <header>Mi tienda — sección: {{.Section}}</header>
+  <main>{{block "content" .}}{{end}}</main>
+  <footer>Hecho con Go</footer>
+</body>
+</html>
+{{end}}

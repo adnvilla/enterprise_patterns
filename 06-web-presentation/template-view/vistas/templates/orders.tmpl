@@ -1,0 +1,18 @@
+<!-- templates/orders.tmpl: la estructura es HTML puro con marcadores -->
+<h1>Órdenes de {{.Customer}}</h1>
+
+{{if .Orders}}
+<table>
+  <tr><th>Orden</th><th>Fecha</th><th>Estado</th><th>Total</th></tr>
+  {{range .Orders}}
+  <tr>
+    <td>#{{.ID}}</td>
+    <td>{{fecha .CreatedAt}}</td>
+    <td>{{if eq .Status "PAID"}}Pagada{{else}}Pendiente{{end}}</td>
+    <td>{{money .TotalCents}}</td>
+  </tr>
+  {{end}}
+</table>
+{{else}}
+<p>Todavía no tienes órdenes.</p>
+{{end}}

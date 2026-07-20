@@ -1,0 +1,6 @@
+<!-- orders.tmpl: solo define su bloque de contenido -->
+{{define "content"}}
+<ul>
+  {{range .Orders}}<li>Orden #{{.ID}} — {{.Total}}</li>{{end}}
+</ul>
+{{end}}
